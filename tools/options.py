@@ -1,14 +1,15 @@
 from colorama import Fore
-import port_scanner
-import ip_scanner
-import utiliy
+from . import port_scanner
+from . import ip_scanner
+from . import utiliy
 import keyboard
 import time
-import ddos_tool
+from . import ddos_tool
 import main
-import discord_webhook_spammer
-import ippinger
-import geoip_locator
+from . import discord_webhook_spammer
+from . import ippinger
+from . import geoip_locator
+from . import wifipassviewer
 def port_scan_stuff(): 
 
 
@@ -176,4 +177,22 @@ def geoip_locator_options():
             main.main() 
             break
 
+
+def wifipassviewer_options():
+    print("\n\n")
+    utiliy.clear()
+
+    profiles =wifipassviewer.get_profiles()
+
+    for a in profiles:
+        wow = wifipassviewer.get_password(a)
+        print(f"{Fore.GREEN} {a}-{wow}")
+
+    print(f"{Fore.LIGHTCYAN_EX}  Press R to return to the menu. \n")
+    while True:
+        if keyboard.is_pressed("r"):
+            
+            utiliy.clear()
+            main.main() 
+            break
 

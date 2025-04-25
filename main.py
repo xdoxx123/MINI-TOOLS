@@ -1,12 +1,12 @@
 import socket
 
-import logo
-import port_scanner
+import tools.logo as logo
+
 from colorama import Fore, Back, Style, init
 import keyboard
-import utiliy
+import tools.utiliy as utiliy
 import os
-import options
+import tools.options as options
 import time
 def main():
     os.system("title mini tools")
@@ -18,6 +18,7 @@ def main():
     print(f"{Fore.LIGHTCYAN_EX} 1 --Port Scanner        4-- Discord Webhook Spammer   \n")
     print(f"{Fore.LIGHTCYAN_EX} 2 --Ip Scanner          5-- Ip pinger \n")
     print(f"{Fore.LIGHTCYAN_EX} 3 --DDoS tool           6-- Geoip locator\n")
+    print(f"{Fore.LIGHTCYAN_EX} 7 --Wifi Password Viewer(Windows only)          \n")
     print(f"{Fore.RED} q --Leave the tool")
     while True:
         if keyboard.is_pressed("1"):
@@ -41,6 +42,9 @@ def main():
         elif keyboard.is_pressed("6"):
             time.sleep(0.2)
             options.geoip_locator_options()
+        elif keyboard.is_pressed("7"):
+            time.sleep(0.2)
+            options.wifipassviewer_options()
             
             
             
