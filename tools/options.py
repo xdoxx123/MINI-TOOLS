@@ -10,6 +10,7 @@ from . import discord_webhook_spammer
 from . import ippinger
 from . import geoip_locator
 from . import wifipassviewer
+from . import devicescanner
 def port_scan_stuff(): 
 
 
@@ -196,3 +197,20 @@ def wifipassviewer_options():
             main.main() 
             break
 
+def devicescanner_options():
+    print("\n\n")
+    utiliy.clear()
+    wow=devicescanner.get_local_range()
+    try:
+        devicescanner.scan(wow)
+    except PermissionError:
+        print(Fore.RED+"[!] Run as a administator")
+        utiliy.clear()
+        main.main()
+    print(f"{Fore.LIGHTCYAN_EX}  Press R to return to the menu. \n")
+    while True:
+        if keyboard.is_pressed("r"):
+            
+            utiliy.clear()
+            main.main() 
+            break
