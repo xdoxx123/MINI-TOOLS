@@ -11,6 +11,7 @@ from . import ippinger
 from . import geoip_locator
 from . import wifipassviewer
 from . import devicescanner
+from . import packetsniffer
 def port_scan_stuff(): 
 
 
@@ -214,3 +215,10 @@ def devicescanner_options():
             utiliy.clear()
             main.main() 
             break
+
+
+def packetsniffer_options():
+    print("\n\n")
+    utiliy.clear()
+    print(Fore.LIGHTCYAN_EX+"[*] Started Packet Sniffing Press Ctrl+C to stop")
+    packetsniffer.StartSniffing()
